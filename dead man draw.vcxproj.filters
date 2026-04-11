@@ -24,6 +24,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Deck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h">
@@ -33,6 +36,9 @@
       <Filter>Player.h</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Deck.h">
       <Filter>Player.h</Filter>
     </ClInclude>
   </ItemGroup>
