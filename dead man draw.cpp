@@ -13,7 +13,15 @@ int main()
 
     Game game;
     game.startGame();
-    game.playTurn();
+
+
+    while (!game.isGameOver())
+    {
+        game.playTurn();
+        std::cout << std::endl;
+    }
+
+    game.endGame();
 
     return 0;
 }

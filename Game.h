@@ -28,6 +28,7 @@ public:
     void switchPlayer();
 
     Card* drawFromDeck();
+    Card* peekFromDeck() const;
     void addToDiscard(Card* card);
 
     Player* getCurrentPlayer() const;

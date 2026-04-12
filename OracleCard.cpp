@@ -1,4 +1,6 @@
 #include "OracleCard.h"
+#include "Game.h"
+#include <iostream>
 
 OracleCard::OracleCard(int value)
     : Card(Oracle, value)
@@ -12,4 +14,14 @@ std::string OracleCard::str() const
 
 void OracleCard::play(Game& game, Player& player)
 {
+    Card* nextCard = game.peekFromDeck();
+
+    if (nextCard == nullptr)
+    {
+        std::cout << "No cards left in the deck." << std::endl;
+    }
+    else
+    {
+        std::cout << "Next card in the deck is " << nextCard->str() << std::endl;
+    }
 }

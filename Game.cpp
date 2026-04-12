@@ -117,6 +117,7 @@ void Game::switchPlayer()
     else
     {
         currentPlayerIndex = 0;
+        roundNumber = roundNumber + 1;
     }
     turnNumber = turnNumber + 1;
 }
@@ -124,6 +125,11 @@ void Game::switchPlayer()
 Card* Game::drawFromDeck()
 {
     return deck.drawTop();
+}
+
+Card* Game::peekFromDeck() const
+{
+    return deck.peekTop();
 }
 
 void Game::addToDiscard(Card* card)
