@@ -124,9 +124,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CannonCard.cpp" />
+    <ClCompile Include="ChestCard.cpp" />
     <ClCompile Include="dead man draw.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="HookCard.cpp" />
+    <ClCompile Include="KeyCard.cpp" />
     <ClCompile Include="MapCard.cpp" />
     <ClCompile Include="OracleCard.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -137,12 +139,14 @@
     <ClCompile Include="SwordCard.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChestCard.h" />
     <ClInclude Include="GameTitle.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="DiscardPile.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="CannonCard.h" />
+    <ClInclude Include="KeyCard.h" />
     <ClInclude Include="MapCard.h" />
     <ClInclude Include="HookCard.h" />
     <ClInclude Include="MermaidCard.h" />

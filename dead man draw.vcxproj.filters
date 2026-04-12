@@ -51,6 +51,12 @@
     <ClCompile Include="MapCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChestCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h">
@@ -87,6 +93,12 @@
       <Filter>Player.h</Filter>
     </ClInclude>
     <ClInclude Include="MapCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ChestCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCard.h">
       <Filter>Player.h</Filter>
     </ClInclude>
   </ItemGroup>
