@@ -39,6 +39,18 @@
     <ClCompile Include="OracleCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CannonCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HookCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SwordCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h">
@@ -63,6 +75,18 @@
       <Filter>Player.h</Filter>
     </ClInclude>
     <ClInclude Include="OracleCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="CannonCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="HookCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCard.h">
       <Filter>Player.h</Filter>
     </ClInclude>
   </ItemGroup>
