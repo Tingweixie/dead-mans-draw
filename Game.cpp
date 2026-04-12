@@ -18,6 +18,10 @@ Game::~Game()
 
 void Game::startGame()
 {
+    currentPlayerIndex = 0;
+    roundNumber = 1;
+    turnNumber = 1;
+
     initialisePlayers();
     createDeck();
     shuffleDeck();

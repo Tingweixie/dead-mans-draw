@@ -8,6 +8,7 @@
 #include "MermaidCard.h"
 #include "OracleCard.h"
 #include "SwordCard.h"
+#include <cstdlib>
 
 Deck::Deck()
 {
@@ -36,6 +37,14 @@ void Deck::createStandardDeck()
 
 void  Deck::shuffle()
 {
+    for (int i = 0; i < cards.size(); i++)
+    {
+        int randomIndex = rand() % cards.size();
+
+        Card* temp = cards[i];
+        cards[i] = cards[randomIndex];
+        cards[randomIndex] = temp;
+    }
 }
 
 Card* Deck::drawTop()
