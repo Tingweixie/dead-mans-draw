@@ -128,12 +128,14 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="DiscardPile.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="DiscardPile.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
