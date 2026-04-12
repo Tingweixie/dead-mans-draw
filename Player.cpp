@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Game.h"
 
 #include <cstdlib>
 #include <iostream>
@@ -65,4 +66,76 @@ void Player::printPlayArea() const
 void Player::printBank() const
 {
     printCollection(bank);
+}
+
+void Player::bankPlayArea(Game& game)
+{
+    for (int i = 0; i < playArea.size(); i++)
+    {
+        playArea[i]->willAddToBank(game, *this);
+    }
+
+    while (!playArea.empty())
+    {
+        bank.push_back(playArea.back());
+        playArea.pop_back();
+    }
+}
+
+void Player::discardPlayArea(Game& game)
+{
+    while (!playArea.empty())
+    {
+        game.addToDiscard(playArea.back());
+        playArea.pop_back();
+    }
+}
+
+int Player::getScore() const
+{
+    int highestValues[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    int total = 0;
+
+    for (int i = 0; i < bank.size(); i++)
+    {
+        int typeIndex = bank[i]->type();
+
+        if (bank[i]->getValue() > highestValues[typeIndex])
+        {
+            highestValues[typeIndex] = bank[i]->getValue();
+        }
+    }
+
+    for (int i = 0; i < 9; i++)
+    {
+        total = total + highestValues[i];
+    }
+
+    return total;
+}
+
+Card* Player::removeHighestBankCard(CardType type)
+{
+    int highestIndex = -1;
+
+    for (int i = 0; i < bank.size(); i++)
+    {
+        if (bank[i]->type() == type)
+        {
+            if (highestIndex == -1 || bank[i]->getValue() > bank[highestIndex]->getValue())
+            {
+                highestIndex = i;
+            }
+        }
+    }
+
+    if (highestIndex == -1)
+    {
+        return nullptr;
+    }
+
+    Card* removedCard = bank[highestIndex];
+    bank.erase(bank.begin() + highestIndex);
+
+    return removedCard;
 }
