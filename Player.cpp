@@ -39,9 +39,10 @@ bool Player::playCard(Card* card, Game& game)
 {
     if (hasSuitInPlayArea(card->type()))
     {
+
         addToPlayArea(card);
         return true;
-    }
+ }
 
     addToPlayArea(card);
     card->play(game, *this);
@@ -56,7 +57,35 @@ void Player::addToPlayArea(Card* card)
 
 void Player::printCollection(const CardCollection& cards) const
 {
-}
+    for (int suit = 0; suit < 9; suit++)
+    {
+        bool hasSuit = false;
+
+        for (int i = 0; i < cards.size(); i++)
+        {
+            if (cards[i]->type() == suit)
+            {
+                hasSuit = true;
+            }
+        }
+
+        if (hasSuit)
+        {
+            for (int value = 9; value >= 2; value--)
+            {
+                for (int i = 0; i < cards.size(); i++)
+                {
+                    if (cards[i]->type() == suit && cards[i]->getValue() == value)
+                    {
+                        std::cout << cards[i]->str() << " ";
+                    }
+                    }
+            }
+
+            std::cout << std::endl;
+        }
+           }
+    }
 
 void Player::printPlayArea() const
 {
@@ -66,6 +95,7 @@ void Player::printPlayArea() const
 void Player::printBank() const
 {
     printCollection(bank);
+    std::cout << "| Score: " << getScore() << std::endl;
 }
 
 void Player::bankPlayArea(Game& game)

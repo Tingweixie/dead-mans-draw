@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <iostream>
 
 Game::Game()
 {
@@ -111,8 +112,34 @@ bool Game::isGameOver() const
 
 void Game::endGame() const
 {
+    int playerOneScore = players[0]->getScore();
+    int playerTwoScore = players[1]->getScore();
+
+    std::cout << std::endl;
+    std::cout << "Final Scores:" << std::endl;
+    printFinalScores();
+    std::cout << std::endl;
+
+    if (playerOneScore > playerTwoScore)
+    {
+        std::cout << players[0]->getName() << " wins!" << std::endl;
+    }
+    else if (playerTwoScore > playerOneScore)
+    {
+        std::cout << players[1]->getName() << " wins!" << std::endl;
+    }
+    else
+    {
+        std::cout << "It's a tie!" << std::endl;
+    }
 }
 
 void Game::printFinalScores() const
 {
+    std::cout << players[0]->getName() << "'s Bank:" << std::endl;
+    players[0]->printBank();
+    std::cout << std::endl;
+
+    std::cout << players[1]->getName() << "'s Bank:" << std::endl;
+    players[1]->printBank();
 }
