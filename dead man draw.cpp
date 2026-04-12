@@ -13,6 +13,7 @@ int main()
 
     Game game;
     game.startGame();
+    game.playTurn();
 
     return 0;
 }

@@ -56,6 +56,39 @@ void Game::shuffleDeck()
 
 void Game::playTurn()
 {
+    Player* currentPlayer = getCurrentPlayer();
+    Card* drawnCard = drawFromDeck();
+
+    std::cout << "--- Round " << roundNumber << ", Turn " << turnNumber << " ---" << std::endl;
+    std::cout << std::endl;
+
+    std::cout << currentPlayer->getName() << "'s turn." << std::endl;
+    std::cout << std::endl;
+
+    std::cout << currentPlayer->getName() << "'s Bank:" << std::endl;
+    currentPlayer->printBank();
+    std::cout << std::endl;
+
+    if (drawnCard == nullptr)
+    {
+        std::cout << "No cards left in the deck." << std::endl;
+        return;
+    }
+
+    std::cout << currentPlayer->getName() << " draws a " << drawnCard->str() << std::endl;
+
+    if (currentPlayer->playCard(drawnCard, *this))
+    {
+        std::cout << "BUST! " << currentPlayer->getName() << " loses all cards in play area." << std::endl;
+        currentPlayer->discardPlayArea(*this);
+        switchPlayer();
+    }
+    else
+    {
+        std::cout << std::endl;
+        std::cout << currentPlayer->getName() << "'s Play Area:" << std::endl;
+        currentPlayer->printPlayArea();
+    }
 }
 
 void Game::switchPlayer()
@@ -68,6 +101,7 @@ void Game::switchPlayer()
     {
         currentPlayerIndex = 0;
     }
+    turnNumber = turnNumber + 1;
 }
 
 Card* Game::drawFromDeck()
