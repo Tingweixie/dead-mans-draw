@@ -8,10 +8,9 @@ void Deck::createStandardDeck()
 {
 }
 
-//void  Deck::shuffle( )
-//{
-//    ff
-
+void  Deck::shuffle()
+{
+}
 
 Card* Deck::drawTop()
 {
@@ -35,12 +34,12 @@ Card* Deck::peekTop() const
     return cards.back();
 }
 
-//bool Deck::isEmpty() const
-//{
-//    return cards.empty();
-//}
-//
-//int Deck::size() const
-//{
-//    return cards.size();
-//}
+bool Deck::isEmpty() const
+{
+    return cards.empty();
+}
+
+int Deck::size() const
+{
+    return cards.size();
+}
