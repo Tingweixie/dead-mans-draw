@@ -33,6 +33,12 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MermaidCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OracleCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h">
@@ -51,6 +57,12 @@
       <Filter>Player.h</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="MermaidCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="OracleCard.h">
       <Filter>Player.h</Filter>
     </ClInclude>
   </ItemGroup>
