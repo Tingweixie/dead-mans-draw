@@ -128,7 +128,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="DiscardPile.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h" />

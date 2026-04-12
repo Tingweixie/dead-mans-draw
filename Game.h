@@ -22,9 +22,20 @@ public:
 
     void startGame();
     void initialisePlayers();
+    void createDeck();
+    void shuffleDeck();
+    void playTurn();
+    void switchPlayer();
+
+    Card* drawFromDeck();
+    void addToDiscard(Card* card);
 
     Player* getCurrentPlayer() const;
     Player* getOtherPlayer() const;
+
+    bool isGameOver() const;
+    void endGame() const;
+    void printFinalScores() const;
 };
 
 #endif

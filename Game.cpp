@@ -19,6 +19,8 @@ Game::~Game()
 void Game::startGame()
 {
     initialisePlayers();
+    createDeck();
+    shuffleDeck();
 }
 
 void Game::initialisePlayers()
@@ -37,6 +39,42 @@ void Game::initialisePlayers()
     players[1]->setRandomName();
 }
 
+void Game::createDeck()
+{
+    deck.createStandardDeck();
+}
+
+void Game::shuffleDeck()
+{
+    deck.shuffle();
+}
+
+void Game::playTurn()
+{
+}
+
+void Game::switchPlayer()
+{
+    if (currentPlayerIndex == 0)
+    {
+        currentPlayerIndex = 1;
+    }
+    else
+    {
+        currentPlayerIndex = 0;
+    }
+}
+
+Card* Game::drawFromDeck()
+{
+    return deck.drawTop();
+}
+
+void Game::addToDiscard(Card* card)
+{
+    discardPile.addCard(card);
+}
+
 Player* Game::getCurrentPlayer() const
 {
     return players[currentPlayerIndex];
@@ -50,4 +88,27 @@ Player* Game::getOtherPlayer() const
     }
 
     return players[0];
+}
+
+bool Game::isGameOver() const
+{
+    if (deck.isEmpty())
+    {
+        return true;
+    }
+
+    if (turnNumber > maxTurns)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+void Game::endGame() const
+{
+}
+
+void Game::printFinalScores() const
+{
 }
