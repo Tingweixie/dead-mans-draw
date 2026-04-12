@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <iostream>
+#include <string>
 
 Game::Game()
 {
@@ -57,7 +58,7 @@ void Game::shuffleDeck()
 void Game::playTurn()
 {
     Player* currentPlayer = getCurrentPlayer();
-    Card* drawnCard = drawFromDeck();
+    std::string choice = "y";
 
     std::cout << "--- Round " << roundNumber << ", Turn " << turnNumber << " ---" << std::endl;
     std::cout << std::endl;
@@ -69,26 +70,42 @@ void Game::playTurn()
     currentPlayer->printBank();
     std::cout << std::endl;
 
-    if (drawnCard == nullptr)
+    while (choice == "y")
     {
-        std::cout << "No cards left in the deck." << std::endl;
-        return;
-    }
+        Card* drawnCard = drawFromDeck();
 
-    std::cout << currentPlayer->getName() << " draws a " << drawnCard->str() << std::endl;
+        if (drawnCard == nullptr)
+        {
+            std::cout << "No cards left in the deck." << std::endl;
+            return;
+        }
 
-    if (currentPlayer->playCard(drawnCard, *this))
-    {
-        std::cout << "BUST! " << currentPlayer->getName() << " loses all cards in play area." << std::endl;
-        currentPlayer->discardPlayArea(*this);
-        switchPlayer();
-    }
-    else
-    {
+        std::cout << currentPlayer->getName() << " draws a " << drawnCard->str() << std::endl;
+
+        if (currentPlayer->playCard(drawnCard, *this))
+        {
+            std::cout << "BUST! " << currentPlayer->getName() << " loses all cards in play area." << std::endl;
+            currentPlayer->discardPlayArea(*this);
+            switchPlayer();
+            return;
+        }
+  
         std::cout << std::endl;
         std::cout << currentPlayer->getName() << "'s Play Area:" << std::endl;
         currentPlayer->printPlayArea();
+        std::cout << std::endl;
+
+        std::cout << "Draw again? (y/n): ";
+        std::cin >> choice;
+        std::cout << std::endl;
     }
+    currentPlayer->bankPlayArea(*this);
+
+    std::cout << currentPlayer->getName() << "'s Bank:" << std::endl;
+    currentPlayer->printBank();
+    std::cout << std::endl;
+
+    switchPlayer();
 }
 
 void Game::switchPlayer()
