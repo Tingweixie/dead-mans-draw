@@ -49,6 +49,29 @@ bool Player::hasSuitInPlayArea(CardType type) const
     return false;
 }
 
+bool Player::hasCardsInBank() const
+{
+    if (bank.empty())
+    {
+        return false;
+    }
+
+    return true;
+}
+
+bool Player::hasSuitInBank(CardType type) const
+{
+    for (int i = 0; i < bank.size(); i++)
+    {
+        if (bank[i]->type() == type)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 bool Player::playCard(Card* card, Game& game)
 {
     if (hasSuitInPlayArea(card->type()))

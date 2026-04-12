@@ -24,6 +24,8 @@ public:
 
     bool playCard(Card* card, Game& game);
     bool hasSuitInPlayArea(CardType type) const;
+    bool hasCardsInBank() const;
+    bool hasSuitInBank(CardType type) const;
     void addToPlayArea(Card* card);
 
     void bankPlayArea(Game& game);
