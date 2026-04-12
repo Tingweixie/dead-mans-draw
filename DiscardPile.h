@@ -10,6 +10,7 @@ private:
 
 public:
     DiscardPile();
+    ~DiscardPile();
 
     void addCard(Card* card);
     Card* drawTop();

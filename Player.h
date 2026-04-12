@@ -17,6 +17,7 @@ private:
 
 public:
     Player();
+    ~Player();
 
     void setRandomName();
     std::string getName() const;

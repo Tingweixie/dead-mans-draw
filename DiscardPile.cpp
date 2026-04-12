@@ -4,6 +4,14 @@ DiscardPile::DiscardPile()
 {
 }
 
+DiscardPile::~DiscardPile()
+{
+    while (!cards.empty())
+    {
+        delete cards.back();
+        cards.pop_back();
+    }
+}
 void DiscardPile::addCard(Card* card)
 {
     cards.push_back(card);

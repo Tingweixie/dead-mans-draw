@@ -15,6 +15,15 @@ Deck::Deck()
 
 }
 
+Deck::~Deck()
+{
+    while (!cards.empty())
+    {
+        delete cards.back();
+        cards.pop_back();
+    }
+}
+
 void Deck::createStandardDeck()
 {
     for (int i = 2; i <= 7; i++)

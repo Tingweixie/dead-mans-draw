@@ -8,6 +8,20 @@ Player::Player()
 {
     name = "";
 }
+Player::~Player()
+{
+    while (!playArea.empty())
+    {
+        delete playArea.back();
+        playArea.pop_back();
+    }
+
+    while (!bank.empty())
+    {
+        delete bank.back();
+        bank.pop_back();
+    }
+}
 
 void Player::setRandomName()
 {

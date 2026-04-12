@@ -10,6 +10,7 @@ private:
 
 public:
     Deck();
+    ~Deck();
 
     void createStandardDeck();
     void shuffle();
