@@ -57,6 +57,9 @@
     <ClCompile Include="KeyCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KrakenCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTitle.h">
@@ -99,6 +102,9 @@
       <Filter>Player.h</Filter>
     </ClInclude>
     <ClInclude Include="KeyCard.h">
+      <Filter>Player.h</Filter>
+    </ClInclude>
+    <ClInclude Include="KrakenCard.h">
       <Filter>Player.h</Filter>
     </ClInclude>
   </ItemGroup>

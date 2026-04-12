@@ -1,12 +1,38 @@
 #include "Deck.h"
+#include "CannonCard.h"
+#include "ChestCard.h"
+#include "HookCard.h"
+#include "KeyCard.h"
+#include "KrakenCard.h"
+#include "MapCard.h"
+#include "MermaidCard.h"
+#include "OracleCard.h"
+#include "SwordCard.h"
 
 Deck::Deck()
 {
+
 }
 
 void Deck::createStandardDeck()
 {
-}
+    for (int i = 2; i <= 7; i++)
+    {
+        cards.push_back(new CannonCard(i));
+        cards.push_back(new ChestCard(i));
+        cards.push_back(new KeyCard(i));
+        cards.push_back(new SwordCard(i));
+        cards.push_back(new HookCard(i));
+        cards.push_back(new OracleCard(i));
+        cards.push_back(new MapCard(i));
+        cards.push_back(new KrakenCard(i));
+  }
+    for (int i = 4; i <= 9; i++)
+    {
+    cards.push_back(new MermaidCard(i));
+    }
+    }
+
 
 void  Deck::shuffle()
 {
