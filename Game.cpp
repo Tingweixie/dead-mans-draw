@@ -101,6 +101,13 @@ void Game::playTurn()
 
         std::cout << "Draw again? (y/n): ";
         std::cin >> choice;
+
+        while (choice != "y" && choice != "n")
+        {
+            std::cout << "Please enter y or n: ";
+            std::cin >> choice;
+        }
+
         std::cout << std::endl;
     }
     currentPlayer->bankPlayArea(*this);
