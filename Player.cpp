@@ -158,6 +158,8 @@ int Player::getPlayAreaSize() const
 
 void Player::bankPlayArea(Game& game)
 {
+    game.clearChestKeyBonusUsed();
+
     for (int i = 0; i < playArea.size(); i++)
     {
         playArea[i]->willAddToBank(game, *this);

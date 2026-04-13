@@ -16,6 +16,7 @@ private:
     int turnNumber;
     int maxTurns;
     bool bustFromAbility;
+    bool chestKeyBonusUsed;
 
 public:
     Game();
@@ -37,6 +38,10 @@ public:
     void setBustFromAbility();
     bool hasBustFromAbility() const;
     void clearBustFromAbility();
+
+    void setChestKeyBonusUsed();
+    bool hasChestKeyBonusUsed() const;
+    void clearChestKeyBonusUsed();
 
     Player* getCurrentPlayer() const;
     Player* getOtherPlayer() const;

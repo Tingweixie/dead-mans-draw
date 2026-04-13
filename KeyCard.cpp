@@ -24,6 +24,13 @@ void KeyCard::willAddToBank(Game& game, Player& player)
         return;
     }
 
+    if (game.hasChestKeyBonusUsed())
+    {
+        return;
+    }
+
+    game.setChestKeyBonusUsed();
+
     int bonusCount = player.getPlayAreaSize();
     bool drewAnyCard = false;
 

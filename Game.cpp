@@ -11,6 +11,7 @@ Game::Game()
     turnNumber = 1;
     maxTurns = 20;
     bustFromAbility = false;
+    chestKeyBonusUsed = false;
 }
 
 Game::~Game()
@@ -25,6 +26,7 @@ void Game::startGame()
     roundNumber = 1;
     turnNumber = 1;
     bustFromAbility = false;
+    chestKeyBonusUsed = false;
 
     deck.clearCards();
     discardPile.clearCards();
@@ -195,6 +197,20 @@ void Game::clearBustFromAbility()
     bustFromAbility = false;
 }
 
+void Game::setChestKeyBonusUsed()
+{
+    chestKeyBonusUsed = true;
+}
+
+bool Game::hasChestKeyBonusUsed() const
+{
+    return chestKeyBonusUsed;
+}
+
+void Game::clearChestKeyBonusUsed()
+{
+    chestKeyBonusUsed = false;
+}
 
 Player* Game::getCurrentPlayer() const
 {
