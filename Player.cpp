@@ -8,7 +8,13 @@ Player::Player()
 {
     name = "";
 }
+
 Player::~Player()
+{
+    clearCards();
+}
+
+void Player::clearCards()
 {
     while (!playArea.empty())
     {

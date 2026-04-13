@@ -19,6 +19,7 @@ public:
     Player();
     ~Player();
 
+    void clearCards();
     void setRandomName();
     std::string getName() const;
 

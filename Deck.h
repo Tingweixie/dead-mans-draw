@@ -12,6 +12,7 @@ public:
     Deck();
     ~Deck();
 
+    void clearCards();
     void createStandardDeck();
     void shuffle();
 

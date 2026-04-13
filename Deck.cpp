@@ -17,6 +17,11 @@ Deck::Deck()
 
 Deck::~Deck()
 {
+    clearCards();
+}
+
+void Deck::clearCards()
+{
     while (!cards.empty())
     {
         delete cards.back();

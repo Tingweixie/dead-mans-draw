@@ -26,6 +26,9 @@ void Game::startGame()
     turnNumber = 1;
     bustFromAbility = false;
 
+    deck.clearCards();
+    discardPile.clearCards();
+
     initialisePlayers();
     createDeck();
     shuffleDeck();
@@ -37,10 +40,18 @@ void Game::initialisePlayers()
     {
         players[0] = new Player();
     }
+    else
+    {
+        players[0]->clearCards();
+    }
 
     if (players[1] == nullptr)
     {
         players[1] = new Player();
+    }
+    else
+    {
+        players[1]->clearCards();
     }
 
     players[0]->setRandomName();

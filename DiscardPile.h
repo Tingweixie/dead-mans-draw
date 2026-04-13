@@ -12,6 +12,7 @@ public:
     DiscardPile();
     ~DiscardPile();
 
+    void clearCards();
     void addCard(Card* card);
     Card* drawTop();
     CardCollection drawMany(int count);

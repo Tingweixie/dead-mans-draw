@@ -6,12 +6,18 @@ DiscardPile::DiscardPile()
 
 DiscardPile::~DiscardPile()
 {
+    clearCards();
+}
+
+void DiscardPile::clearCards()
+{
     while (!cards.empty())
     {
         delete cards.back();
         cards.pop_back();
     }
 }
+
 void DiscardPile::addCard(Card* card)
 {
     cards.push_back(card);
