@@ -136,6 +136,11 @@ Card* Game::peekFromDeck() const
     return deck.peekTop();
 }
 
+CardCollection Game::drawManyFromDiscard(int count)
+{
+    return discardPile.drawMany(count);
+}
+
 void Game::addToDiscard(Card* card)
 {
     discardPile.addCard(card);

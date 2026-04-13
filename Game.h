@@ -30,6 +30,7 @@ public:
 
     Card* drawFromDeck();
     Card* peekFromDeck() const;
+    CardCollection drawManyFromDiscard(int count);
     void addToDiscard(Card* card);
 
     void setBustFromAbility();
