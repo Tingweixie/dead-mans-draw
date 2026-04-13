@@ -91,6 +91,17 @@ void Game::playTurn()
         if (drawnCard == nullptr)
         {
             std::cout << "No cards left in the deck." << std::endl;
+
+            if (currentPlayer->getPlayAreaSize() > 0)
+            {
+                std::cout << std::endl;
+                currentPlayer->bankPlayArea(*this);
+
+                std::cout << currentPlayer->getName() << "'s Bank:" << std::endl;
+                currentPlayer->printBank();
+                std::cout << std::endl;
+            }
+
             return;
         }
 
