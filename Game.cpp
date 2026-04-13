@@ -10,6 +10,7 @@ Game::Game()
     roundNumber = 1;
     turnNumber = 1;
     maxTurns = 20;
+    bustFromAbility = false;
 }
 
 Game::~Game()
@@ -23,6 +24,7 @@ void Game::startGame()
     currentPlayerIndex = 0;
     roundNumber = 1;
     turnNumber = 1;
+    bustFromAbility = false;
 
     initialisePlayers();
     createDeck();
@@ -59,6 +61,7 @@ void Game::playTurn()
 {
     Player* currentPlayer = getCurrentPlayer();
     std::string choice = "y";
+    clearBustFromAbility();
 
     std::cout << "--- Round " << roundNumber << ", Turn " << turnNumber << " ---" << std::endl;
     std::cout << std::endl;
@@ -86,6 +89,7 @@ void Game::playTurn()
         {
             std::cout << "BUST! " << currentPlayer->getName() << " loses all cards in play area." << std::endl;
             currentPlayer->discardPlayArea(*this);
+            clearBustFromAbility();
             switchPlayer();
             return;
         }
@@ -136,6 +140,22 @@ void Game::addToDiscard(Card* card)
 {
     discardPile.addCard(card);
 }
+
+void Game::setBustFromAbility()
+{
+    bustFromAbility = true;
+}
+
+bool Game::hasBustFromAbility() const
+{
+    return bustFromAbility;
+}
+
+void Game::clearBustFromAbility()
+{
+    bustFromAbility = false;
+}
+
 
 Player* Game::getCurrentPlayer() const
 {

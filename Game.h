@@ -15,6 +15,7 @@ private:
     int roundNumber;
     int turnNumber;
     int maxTurns;
+    bool bustFromAbility;
 
 public:
     Game();
@@ -30,6 +31,10 @@ public:
     Card* drawFromDeck();
     Card* peekFromDeck() const;
     void addToDiscard(Card* card);
+
+    void setBustFromAbility();
+    bool hasBustFromAbility() const;
+    void clearBustFromAbility();
 
     Player* getCurrentPlayer() const;
     Player* getOtherPlayer() const;

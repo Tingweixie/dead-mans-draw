@@ -83,6 +83,11 @@ bool Player::playCard(Card* card, Game& game)
 
     addToPlayArea(card);
     card->play(game, *this);
+
+    if (game.hasBustFromAbility())
+    {
+        return true;
+    }
     return false;
 }
 
