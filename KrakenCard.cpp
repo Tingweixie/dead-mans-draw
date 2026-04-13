@@ -22,6 +22,7 @@ void KrakenCard::play(Game& game, Player& player)
         if (nextCard == nullptr)
         {
             std::cout << "No cards left in the deck." << std::endl;
+            game.setDeckEndedDuringAbility();
             return;
         }
 

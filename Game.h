@@ -17,6 +17,7 @@ private:
     int maxTurns;
     bool bustFromAbility;
     bool chestKeyBonusUsed;
+    bool deckEndedDuringAbility;
 
 public:
     Game();
@@ -42,6 +43,10 @@ public:
     void setChestKeyBonusUsed();
     bool hasChestKeyBonusUsed() const;
     void clearChestKeyBonusUsed();
+
+    void setDeckEndedDuringAbility();
+    bool hasDeckEndedDuringAbility() const;
+    void clearDeckEndedDuringAbility();
 
     Player* getCurrentPlayer() const;
     Player* getOtherPlayer() const;

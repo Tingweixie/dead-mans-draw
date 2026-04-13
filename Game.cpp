@@ -12,6 +12,7 @@ Game::Game()
     maxTurns = 20;
     bustFromAbility = false;
     chestKeyBonusUsed = false;
+    deckEndedDuringAbility = false;
 }
 
 Game::~Game()
@@ -27,6 +28,7 @@ void Game::startGame()
     turnNumber = 1;
     bustFromAbility = false;
     chestKeyBonusUsed = false;
+    deckEndedDuringAbility = false;
 
     deck.clearCards();
     discardPile.clearCards();
@@ -75,6 +77,7 @@ void Game::playTurn()
     Player* currentPlayer = getCurrentPlayer();
     std::string choice = "y";
     clearBustFromAbility();
+    clearDeckEndedDuringAbility();
 
     std::cout << "--- Round " << roundNumber << ", Turn " << turnNumber << " ---" << std::endl;
     std::cout << std::endl;
@@ -115,6 +118,19 @@ void Game::playTurn()
             currentPlayer->discardPlayArea(*this);
             clearBustFromAbility();
             switchPlayer();
+            return;
+        }
+
+        if (hasDeckEndedDuringAbility())
+        {
+            std::cout << std::endl;
+            currentPlayer->bankPlayArea(*this);
+
+            std::cout << currentPlayer->getName() << "'s Bank:" << std::endl;
+            currentPlayer->printBank();
+            std::cout << std::endl;
+
+            clearDeckEndedDuringAbility();
             return;
         }
   
@@ -210,6 +226,21 @@ bool Game::hasChestKeyBonusUsed() const
 void Game::clearChestKeyBonusUsed()
 {
     chestKeyBonusUsed = false;
+}
+
+void Game::setDeckEndedDuringAbility()
+{
+    deckEndedDuringAbility = true;
+}
+
+bool Game::hasDeckEndedDuringAbility() const
+{
+    return deckEndedDuringAbility;
+}
+
+void Game::clearDeckEndedDuringAbility()
+{
+    deckEndedDuringAbility = false;
 }
 
 Player* Game::getCurrentPlayer() const

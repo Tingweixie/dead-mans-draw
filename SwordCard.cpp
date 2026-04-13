@@ -109,7 +109,7 @@ void SwordCard::play(Game& game, Player& player)
             chosenType =  Oracle;
             validChoice = true;
         }
-        else if (choice == "Ma" && otherPlayer->hasSuitInBank(Map))
+        else if (choice == "Map" && otherPlayer->hasSuitInBank(Map))
         {
             chosenType = Map;
             validChoice = true;
