@@ -27,6 +27,7 @@ public:
     bool hasCardsInBank() const;
     bool hasSuitInBank(CardType type) const;
     void addToPlayArea(Card* card);
+    void addToBank(Card* card);
 
     void bankPlayArea(Game& game);
     void discardPlayArea(Game& game);
@@ -34,6 +35,7 @@ public:
     void printPlayArea() const;
     void printBank() const;
 
+    int getPlayAreaSize() const;
     int getScore() const;
     Card* removeHighestBankCard(CardType type);
 };

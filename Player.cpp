@@ -97,6 +97,11 @@ void Player::addToPlayArea(Card* card)
     playArea.push_back(card);
 }
 
+void Player::addToBank(Card* card)
+{
+    bank.push_back(card);
+}
+
 void Player::printCollection(const CardCollection& cards) const
 {
     for (int suit = 0; suit < 9; suit++)
@@ -138,6 +143,11 @@ void Player::printBank() const
 {
     printCollection(bank);
     std::cout << "| Score: " << getScore() << std::endl;
+}
+
+int Player::getPlayAreaSize() const
+{
+    return playArea.size();
 }
 
 void Player::bankPlayArea(Game& game)
