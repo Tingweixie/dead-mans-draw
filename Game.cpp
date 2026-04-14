@@ -60,6 +60,11 @@ void Game::initialisePlayers()
 
     players[0]->setRandomName();
     players[1]->setRandomName();
+
+    while (players[0]->getName() == players[1]->getName())
+    {
+        players[1]->setRandomName();
+    }
 }
 
 void Game::createDeck()

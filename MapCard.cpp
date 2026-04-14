@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Player.h"
 #include <iostream>
+#include <limits>
 
 MapCard::MapCard(int value)
     : Card(Map, value)
@@ -32,10 +33,28 @@ void MapCard::play(Game& game, Player& player)
 
     int choice = 0;
     bool validChoice = false;
+    std::string input = "";
 
     while (!validChoice)
     {
-        std::cin >> choice;
+        std::cin >> input;
+
+        if (input == "1")
+        {
+            choice = 1;
+        }
+        else if (input == "2")
+        {
+            choice = 2;
+        }
+        else if (input == "3")
+        {
+            choice = 3;
+        }
+        else
+        {
+            choice = 0;
+        }
 
         if (choice >= 1 && choice <= drawnCards.size())
         {
