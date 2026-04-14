@@ -87,8 +87,3 @@ bool Deck::isEmpty() const
 {
     return cards.empty();
 }
-
-int Deck::size() const
-{
-    return cards.size();
-}

@@ -20,7 +20,6 @@ public:
     Card* peekTop() const;
 
     bool isEmpty() const;
-    int size() const;
 };
 
 #endif

@@ -10,7 +10,6 @@ public:
 
     std::string str() const;
     void play(Game& game, Player& player);
-    void willAddToBank(Game& game, Player& player);
 };
 
 #endif

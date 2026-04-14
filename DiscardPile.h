@@ -18,7 +18,6 @@ public:
     CardCollection drawMany(int count);
 
     bool isEmpty() const;
-    int size() const;
 };
 
 #endif
