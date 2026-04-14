@@ -15,6 +15,7 @@ std::string KeyCard::str() const
 
 void KeyCard::play(Game& game, Player& player)
 {
+    std::cout << "    No immediate effect. If banked with a Chest, draw as many bonus cards from the discard pile as you moved into your Bank." << std::endl;
 }
 
 void KeyCard::willAddToBank(Game& game, Player& player)

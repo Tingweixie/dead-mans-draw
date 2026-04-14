@@ -124,6 +124,7 @@ void Player::printCollection(const CardCollection& cards) const
 
         if (hasSuit)
         {
+            std::cout << "    ";
             for (int value = 9; value >= 2; value--)
             {
                 for (int i = 0; i < cards.size(); i++)

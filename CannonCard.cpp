@@ -19,11 +19,11 @@ void CannonCard::play(Game& game, Player& player)
 
     if (!otherPlayer->hasCardsInBank())
     {
-        std::cout << "No cards in the other player's bank. Play continues." << std::endl;
+        std::cout << "  No cards in the other player's bank. Play continues." << std::endl;
         return;
     }
 
-    std::cout << "Choose a suit to discard from " << otherPlayer->getName() << "'s bank:" << std::endl;
+    std::cout << "  Choose a suit to discard from " << otherPlayer->getName() << "'s bank:" << std::endl;
 
     if (otherPlayer->hasSuitInBank(Cannon))
     {
@@ -125,7 +125,7 @@ void CannonCard::play(Game& game, Player& player)
         }
         else
         {
-            std::cout << "That suit is not in the other player's bank. Choose again." << std::endl;
+            std::cout << "  That suit is not in the other player's bank. Choose again." << std::endl;
         }
     }
 

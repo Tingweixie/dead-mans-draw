@@ -2,7 +2,6 @@
 #include "Game.h"
 #include "Player.h"
 #include <iostream>
-#include <limits>
 
 MapCard::MapCard(int value)
     : Card(Map, value)

@@ -17,11 +17,11 @@ void HookCard::play(Game& game, Player& player)
 {
     if (!player.hasCardsInBank())
     {
-        std::cout << "No cards in your bank. Play continues." << std::endl;
+        std::cout << "          No cards in your bank. Play continues." << std::endl;
         return;
     }
 
-    std::cout << "Choose a suit to play from your bank:" << std::endl;
+    std::cout << "      Choose a suit toplay f rom your bank:" << std::endl;
 
     if (player.hasSuitInBank(Cannon))
     {
@@ -123,7 +123,7 @@ void HookCard::play(Game& game, Player& player)
         }
         else
         {
-            std::cout << "That suit is not in your bank. Choose again." << std::endl;
+            std::cout << "  Taht suit is not in your bank. Choose again." << std::endl;
         }
     }
 
@@ -131,7 +131,7 @@ void HookCard::play(Game& game, Player& player)
 
     if (chosenCard != nullptr)
     {
-        std::cout << chosenCard->str() << " is played from your bank." << std::endl;
+        std::cout << player.getName() << " draws a " << chosenCard->str() << std::endl;
 
         if (player.playCard(chosenCard, game))
         {

@@ -22,6 +22,6 @@ void OracleCard::play(Game& game, Player& player)
     }
     else
     {
-        std::cout << "Next card in the deck is " << nextCard->str() << std::endl;
+        std::cout << "    The Oracle sees a " << nextCard->str() << std::endl;
     }
 }
